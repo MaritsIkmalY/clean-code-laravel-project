@@ -13,7 +13,7 @@ class Food extends Model
     protected $fillable = [
         'name',
         'description',
-        'pros'
+        'pros',
     ];
 
     public function foodNutrition(): HasMany

@@ -13,7 +13,7 @@ class FoodNutrition extends Model
     protected $fillable = [
         'food_id',
         'nutrition_id',
-        'amount'
+        'amount',
     ];
 
     public function food(): BelongsTo

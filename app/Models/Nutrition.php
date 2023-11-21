@@ -13,7 +13,7 @@ class Nutrition extends Model
 
     protected $fillable = [
         'nutrition_measurement_type_id',
-        'name'
+        'name',
     ];
 
     public function nutritionMeasurementType(): BelongsTo
