@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Data\FoodData;
 use App\Http\Resources\FoodResource;
+use App\Http\Resources\FoodWithNutritionResource;
 use App\Models\Food;
 
 class FoodService
@@ -16,7 +17,8 @@ class FoodService
 
     public function show(Food $food)
     {
-        return FoodResource::make($food);
+        $food = Food::whereId($food->id)->with('foodNutrition.nutrition.nutritionMeasurementType')->first();
+        return FoodWithNutritionResource::make($food);
     }
 
     public function create(FoodData $foodData)
@@ -37,6 +39,12 @@ class FoodService
     {
         $food->delete();
         return $this->createFoodResponse($food, 'Food deleted successfully');
+    }
+
+    public function latestFoodList()
+    {
+        $food = Food::latest()->paginate(10);
+        return FoodResource::collection($food);
     }
 
     protected function createFoodResponse(Food $food, string $message)
