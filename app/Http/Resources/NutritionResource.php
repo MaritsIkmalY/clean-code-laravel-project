@@ -14,7 +14,7 @@ class NutritionResource extends JsonResource
             'name' => $this->name,
             'nutrition_measurement_type_id' => $this->nutrition_measurement_type_id,
             'created_at' => $this->created_at->format('Y-m-d H:i:s'),
-            'updated_at' => $this->created_at->diffForHumans(),
+            'updated_at' => $this->created_at->format('Y-m-d H:i:s'),
         ];
     }
 }

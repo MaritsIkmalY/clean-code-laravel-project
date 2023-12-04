@@ -12,12 +12,14 @@ class FoodService
     public function index()
     {
         $food = Food::paginate(10);
+
         return FoodResource::collection($food);
     }
 
     public function show(Food $food)
     {
         $food = Food::whereId($food->id)->with('foodNutrition.nutrition.nutritionMeasurementType')->first();
+
         return FoodWithNutritionResource::make($food);
     }
 
@@ -38,12 +40,14 @@ class FoodService
     public function destroy(Food $food)
     {
         $food->delete();
+
         return $this->createFoodResponse($food, 'Food deleted successfully');
     }
 
     public function latestFoodList()
     {
         $food = Food::latest()->paginate(10);
+
         return FoodResource::collection($food);
     }
 

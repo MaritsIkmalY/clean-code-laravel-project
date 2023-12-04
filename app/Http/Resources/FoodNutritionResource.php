@@ -13,7 +13,7 @@ class FoodNutritionResource extends JsonResource
             'id' => $this->id,
             'amount' => $this->amount,
             'created_at' => $this->created_at->format('Y-m-d H:i:s'),
-            'updated_at' => $this->created_at->diffForHumans(),
+            'updated_at' => $this->created_at->format('Y-m-d H:i:s'),
         ];
     }
 }

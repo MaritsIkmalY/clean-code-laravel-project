@@ -11,6 +11,7 @@ class NutritionMeasurementTypeService
     public function index()
     {
         $nutritionMeasurementType = NutritionMeasurementType::paginate(10);
+
         return NutritionMeasurementTypeResource::collection($nutritionMeasurementType);
     }
 
@@ -44,6 +45,7 @@ class NutritionMeasurementTypeService
     public function destroy(NutritionMeasurementType $nutritionMeasurementType)
     {
         $nutritionMeasurementType->delete();
+
         return $this->createNutritionMeasurementTypeResponse(
             $nutritionMeasurementType,
             'Nutrition measurement type deleted successfully'

@@ -11,6 +11,7 @@ class NutritionService
     public function index()
     {
         $nutrition = Nutrition::paginate(10);
+
         return NutritionResource::collection($nutrition);
     }
 
@@ -36,6 +37,7 @@ class NutritionService
     public function destroy(Nutrition $nutrition)
     {
         $nutrition->delete();
+
         return $this->createNutritionResponse($nutrition, 'Nutrition deleted successfully');
     }
 

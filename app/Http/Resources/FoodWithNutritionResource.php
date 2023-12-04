@@ -15,7 +15,7 @@ class FoodWithNutritionResource extends JsonResource
             'description' => $this->description,
             'pros' => $this->pros,
             'created_at' => $this->created_at->format('Y-m-d H:i:s'),
-            'updated_at' => $this->created_at->diffForHumans(),
+            'updated_at' => $this->created_at->format('Y-m-d H:i:s'),
             'nutrition' => $this->foodNutrition
                 ->sortBy('nutrition.id')
                 ->values()
