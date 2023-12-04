@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FoodCompareCotroller;
 use App\Http\Controllers\FoodController;
 use App\Http\Controllers\FoodNutritionController;
 use App\Http\Controllers\LatestFoodController;
@@ -13,4 +14,5 @@ Route::prefix('v1')->group(function(){
     Route::resource('/nutrition', NutritionController::class);
     Route::resource('/food-nutrition', FoodNutritionController::class);
     Route::get('/latest/food', [LatestFoodController::class, 'index']);
+    Route::get('/compare', [FoodCompareCotroller::class, 'index']);
 });
