@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class FoodData
 {
     private string $name;
+
     private string $description;
+
     private string $pros;
 
     public function setName(string $name)
@@ -40,6 +42,7 @@ class FoodData
         $data->setName($request->get('name'));
         $data->setDescription($request->get('description'));
         $data->setPros($request->get('pros'));
+
         return $data;
     }
 }

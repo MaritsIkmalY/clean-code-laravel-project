@@ -20,6 +20,6 @@ class FoodCompareService
     public function getFoodByName(string $foodName)
     {
         return Food::whereName($foodName)
-        ->with('foodNutrition.nutrition.nutritionMeasurementType')->first();
+            ->with('foodNutrition.nutrition.nutritionMeasurementType')->first();
     }
 }

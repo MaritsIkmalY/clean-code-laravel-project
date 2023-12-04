@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class FoodCompareData
 {
     private string $foodName1;
+
     private string $foodName2;
 
     public function setFoodName1(string $foodName1)
@@ -34,7 +35,7 @@ class FoodCompareData
         $data = new FoodCompareData();
         $data->setFoodName1($request->get('foodName1'));
         $data->setFoodName2($request->get('foodName2'));
+
         return $data;
     }
-
 }

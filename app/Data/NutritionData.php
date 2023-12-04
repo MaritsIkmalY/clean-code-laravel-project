@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 class NutritionData
 {
     private string $name;
+
     private int $nutritionMeasurementTypeId;
 
     public function setName(string $name)
@@ -32,6 +33,7 @@ class NutritionData
         $data = new NutritionData();
         $data->setName($request->get('name'));
         $data->setNutritionMeasurementTypeId($request->get('nutrition_measurement_type_id'));
+
         return $data;
     }
 }

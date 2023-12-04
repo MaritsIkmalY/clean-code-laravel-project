@@ -54,7 +54,7 @@ class FoodService
     protected function createFoodResponse(Food $food, string $message)
     {
         return FoodResource::make($food)
-        ->additional(['message' => $message])
-        ->response();
+            ->additional(['message' => $message])
+            ->response();
     }
 }

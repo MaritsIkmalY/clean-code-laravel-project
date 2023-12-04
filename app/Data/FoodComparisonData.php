@@ -7,6 +7,7 @@ use App\Models\Food;
 class FoodComparisonData
 {
     private Food $food1;
+
     private Food $food2;
 
     public function setFood1(Food $food1)
@@ -57,6 +58,7 @@ class FoodComparisonData
         $data = new FoodComparisonData();
         $data->setFood1($food1);
         $data->setFood2($food2);
+
         return $data;
     }
 }

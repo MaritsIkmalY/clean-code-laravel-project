@@ -24,6 +24,7 @@ class NutritionMeasurementTypeData
     {
         $data = new NutritionMeasurementTypeData();
         $data->setName($request->get('name'));
+
         return $data;
     }
 }

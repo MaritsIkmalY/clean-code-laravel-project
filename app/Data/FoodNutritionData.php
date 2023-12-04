@@ -7,7 +7,9 @@ use Illuminate\Http\Request;
 class FoodNutritionData
 {
     private float $amount;
+
     private int $nutritionId;
+
     private int $foodId;
 
     public function setAmount(float $amount)
@@ -40,6 +42,7 @@ class FoodNutritionData
         $data->setAmount($request->get('amount'));
         $data->setNutritionId($request->get('nutrition_id'));
         $data->setFoodId($request->get('food_id'));
+
         return $data;
     }
 }

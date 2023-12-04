@@ -44,7 +44,7 @@ class NutritionService
     protected function createNutritionResponse(Nutrition $nutrition, string $message)
     {
         return NutritionResource::make($nutrition)
-        ->additional(['message' => $message])
-        ->response();
+            ->additional(['message' => $message])
+            ->response();
     }
 }
